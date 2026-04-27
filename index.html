@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaiqah</title>
+  <meta name="description" content="Zaiqah brings the soul of Arabic cuisine to London. Authentic flavours, handcrafted dishes, warm hospitality. Reserve your table.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-arabesque"></div>
+  <div class="pre-logo">Zaiqah</div>
+  <div class="pre-sub">زيقة — The Taste</div>
+</div>
+
+
+<div class="topbar">
+  <div class="topbar-inner">
+    
+    <div class="topbar-left">
+      <a href="tel:+442071112233" class="topbar-item">
+        <i class="fa-solid fa-phone"></i>
+        +44 207 111 2233
+      </a>
+      <div class="topbar-item">
+        <i class="fa-solid fa-location-dot"></i>
+        14 Ivory Court, Belgravia, London
+      </div>
+    </div>
+
+    <!-- Centre: live hours pill -->
+    <div class="topbar-hours-pill" id="liveHours">
+      <i class="fa-solid fa-clock"></i>
+      <span id="topbarLiveText">Mon – Sun · 12:00 pm – 11:00 pm</span>
+    </div>
+
+    <!-- Right: halal badge + reserve -->
+    <div class="topbar-right">
+      <div class="topbar-halal">
+        <span class="topbar-halal-dot"></span>
+        100% Halal Certified
+      </div>
+      <a href="#reservation" class="topbar-reserve">
+        <i class="fa-solid fa-calendar-check"></i>
+        Reserve a Table
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER — -->
+<header id="header">
+  <div class="nav-container">
+    <!-- Logo with emblem -->
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-text">
+        <span class="nav-logo-en">Zaiqah</span>
+        <span class="nav-logo-ar">زيقة — Arabic Fine Dining</span>
+      </div>
+    </a>
+
+    <!-- Nav links -->
+    <nav class="nav-links">
+      <a href="#about">Our Story</a>
+      <a href="#dishes">Specialties</a>
+      <a href="#menu">Menu</a>
+      <a href="#chefs">Chefs</a>
+      <a href="#events">Events</a>
+      <a href="#reservation" class="nav-cta">
+        <span class="nav-cta-inner"></span>
+        <i class="fa-regular fa-calendar"></i>
+        <span>Reserve</span>
+      </a>
+    </nav>
+
+    <!-- Right: toggle + hamburger -->
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <span class="toggle-icon icon-sun">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </span>
+        <span class="toggle-icon icon-moon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+          </svg>
+        </span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about"       onclick="closeMob()">Our Story</a>
+  <div class="mob-divider"></div>
+  <a href="#dishes"      onclick="closeMob()">Specialties</a>
+  <div class="mob-divider"></div>
+  <a href="#menu"        onclick="closeMob()">Menu</a>
+  <div class="mob-divider"></div>
+  <a href="#chefs"       onclick="closeMob()">Chefs</a>
+  <div class="mob-divider"></div>
+  <a href="#events"      onclick="closeMob()">Events</a>
+  <div class="mob-divider"></div>
+  <a href="#reservation" onclick="closeMob()">Reserve</a>
+  <span class="mob-sub">زيقة — The Taste</span>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides">
+    <div class="hero-slide active">
+      <img src="https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=1900&q=85&fit=crop" alt="Arabic meze spread">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1900&q=85&fit=crop" alt="Grilled meats">
+    </div>
+    <div class="hero-slide">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1900&q=85&fit=crop" alt="Restaurant interior">
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-line"></span>
+      <span class="hero-badge-text">Est. 2000 · Belgravia, London</span>
+      <span class="hero-badge-line"></span>
+    </div>
+    <h1 class="hero-title">Where <em>Arabic</em><br>Soul Feeds the Senses</h1>
+    <p class="hero-arabic">زيقة — المذاق الأصيل</p>
+    <p class="hero-desc">Generations of craft, the finest Halal ingredients, and the warmth of Arabic hospitality — gathered at one table.</p>
+    <div class="hero-actions">
+      <a href="#reservation" class="btn btn-gold">Reserve a Table</a>
+      <a href="#menu" class="btn btn-outline-white">View Menu</a>
+    </div>
+  </div>
+  <div class="hero-controls">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <div class="strip-item"><span class="strip-dot"></span> 100% Halal Certified</div>
+    <div class="strip-item"><span class="strip-dot"></span> Friday Grand Iftar Table — Every Week</div>
+    <div class="strip-item"><span class="strip-dot"></span> Private Dining Available</div>
+    <div class="strip-item"><span class="strip-dot"></span> Est. 2000 · Seven Decades of Flavour</div>
+    <div class="strip-item"><span class="strip-dot"></span> Fresh Bread Baked Daily</div>
+    <div class="strip-item"><span class="strip-dot"></span> Now Accepting Ramadan Iftar Bookings</div>
+    <div class="strip-item"><span class="strip-dot"></span> 100% Halal Certified</div>
+    <div class="strip-item"><span class="strip-dot"></span> Friday Grand Iftar Table — Every Week</div>
+    <div class="strip-item"><span class="strip-dot"></span> Private Dining Available</div>
+    <div class="strip-item"><span class="strip-dot"></span> Est. 2000 · Two Decades of Flavour</div>
+    <div class="strip-item"><span class="strip-dot"></span> Fresh Bread Baked Daily</div>
+    <div class="strip-item"><span class="strip-dot"></span> Now Accepting Ramadan Iftar Bookings</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visuals reveal-left">
+      <div class="about-img-main">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=85&fit=crop" alt="Zaiqah dining interior">
+      </div>
+      <div class="about-img-float">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80&fit=crop" alt="Arabic food preparation">
+      </div>
+      <div class="about-badge">
+        <span class="yr">26</span>
+        <span class="est">Years</span>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <span class="sec-label">Our Story</span>
+      <h2 class="sec-title">A Table Set in <em>2000</em></h2>
+      <p class="sec-body" style="margin-top:20px">
+        Zaiqah was born from a single belief — that Arabic food, prepared with honesty and love, is among the world's greatest cuisines. Our founders arrived in London in 2000 carrying recipes, spices and an unshakeable conviction.
+      </p>
+      <p class="sec-body" style="margin-top:16px">
+        Twenty-six years on, our za'atar is still stone-ground, our bread still hand-baked before every service, and every guest still leaves having felt something they did not expect: that a meal can feel like a homecoming.
+      </p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-n">26</div>
+          <div class="stat-l">Years Open</div>
+        </div>
+        <div>
+          <div class="stat-n">60+</div>
+          <div class="stat-l">Dishes</div>
+        </div>
+        <div>
+          <div class="stat-n">100%</div>
+          <div class="stat-l">Halal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties" id="dishes">
+  <div class="specialties-header reveal">
+    <div>
+      <span class="sec-label">Our Kitchen's Pride</span>
+      <h2 class="sec-title light">Signature <em>Dishes</em></h2>
+    </div>
+    <a href="#menu" class="btn btn-outline-white">View Full Menu</a>
+  </div>
+  <div class="dishes-scroll-wrap">
+    <div class="dishes-track" id="dishesTrack">
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=700&q=85&fit=crop" alt="Lamb Ouzi">
+          <span class="dish-tag">Signature</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Lamb Ouzi</div>
+          <div class="dish-arabic">أوزي الخروف</div>
+          <p class="dish-desc">Whole shoulder slow-roasted over saffron rice, almonds, and caramelised onions — a dish built for celebration.</p>
+          <div class="dish-footer"><span class="dish-price">£48</span><span class="dish-kcal">920 kcal</span></div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=700&q=85&fit=crop" alt="Meze Platter">
+          <span class="dish-tag">House Favourite</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Grand Meze</div>
+          <div class="dish-arabic">مزة الدار</div>
+          <p class="dish-desc">Hummus, moutabal, kibbeh, fattoush, stuffed vine leaves and warm khubz — the full story in a single spread.</p>
+          <div class="dish-footer"><span class="dish-price">£28</span><span class="dish-kcal">For 2 people</span></div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=700&q=85&fit=crop" alt="Mixed Grill">
+          <span class="dish-tag">Chef's Pick</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Mixed Grill</div>
+          <div class="dish-arabic">مشاوي مختلطة</div>
+          <p class="dish-desc">Kafta, shish tawook, lamb kofta and seekh kebab, grilled over charcoal and served with garlic sauce and rice.</p>
+          <div class="dish-footer"><span class="dish-price">£42</span><span class="dish-kcal">1100 kcal</span></div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=85&fit=crop" alt="Hummus">
+          <span class="dish-tag">Classic</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Hummus Beiruti</div>
+          <div class="dish-arabic">حمص بيروتي</div>
+          <p class="dish-desc">Stone-ground chickpeas, aged tahini, lemon and garlic — topped with slow-braised spiced lamb and pine nuts.</p>
+          <div class="dish-footer"><span class="dish-price">£18</span><span class="dish-kcal">380 kcal</span></div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=700&q=85&fit=crop" alt="Kabsa">
+          <span class="dish-tag">Regional</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Kabsa Royale</div>
+          <div class="dish-arabic">كبسة ملكية</div>
+          <p class="dish-desc">Saudi-style long-grain rice fragrant with cardamom, rose water and dried limes, crowned with tender chicken.</p>
+          <div class="dish-footer"><span class="dish-price">£38</span><span class="dish-kcal">780 kcal</span></div>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=700&q=85&fit=crop" alt="Baklava">
+          <span class="dish-tag">Dessert</span>
+        </div>
+        <div class="dish-info">
+          <div class="dish-name">Baklava Trio</div>
+          <div class="dish-arabic">بقلاوة ثلاثية</div>
+          <p class="dish-desc">Pistachio, walnut and cashew baklava, each layered in hand-rolled filo and soaked in orange blossom syrup.</p>
+          <div class="dish-footer"><span class="dish-price">£12</span><span class="dish-kcal">Serves 2</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="drag-hint"><i class="fa-solid fa-hand-pointer"></i> Drag to explore</div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <span class="sec-label">Culinary Selection</span>
+      <h2 class="sec-title">Tonight's <em>Menu</em></h2>
+    </div>
+    <div class="menu-tabs reveal">
+      <button class="menu-tab active" data-tab="starters">Starters</button>
+      <button class="menu-tab" data-tab="mains">Mains</button>
+      <button class="menu-tab" data-tab="grills">Grills</button>
+      <button class="menu-tab" data-tab="desserts">Sweets</button>
+    </div>
+    <div class="menu-panel active" id="tab-starters">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=200&q=75&fit=crop" alt="Hummus"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Hummus Beiruti</span><span class="menu-item-price">£12</span></div><p class="menu-item-desc">Stone-ground chickpeas, aged tahini, lemon, garlic and olive oil with warm khubz.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-veg">Vegetarian</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=200&q=75&fit=crop" alt="Fattoush"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Fattoush Salad</span><span class="menu-item-price">£11</span></div><p class="menu-item-desc">Crispy fried khubz, fresh vegetables, pomegranate and sumac-citrus dressing.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-veg">Vegetarian</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=200&q=75&fit=crop" alt="Kibbeh"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Lamb Kibbeh</span><span class="menu-item-price">£15</span></div><p class="menu-item-desc">Hand-formed bulgur shells, spiced minced lamb, toasted pine nuts and labneh.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=200&q=75&fit=crop" alt="Moutabal"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Moutabal</span><span class="menu-item-price">£10</span></div><p class="menu-item-desc">Fire-roasted aubergine whipped with tahini, lemon and garlic, finished with pomegranate seeds.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-veg">Vegetarian</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=200&q=75&fit=crop" alt="Sambousek"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Sambousek</span><span class="menu-item-price">£13</span></div><p class="menu-item-desc">Golden-fried pastry parcels stuffed with spiced minced lamb, onion and allspice.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-new">New</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=200&q=75&fit=crop" alt="Halloumi"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Griddled Halloumi</span><span class="menu-item-price">£14</span></div><p class="menu-item-desc">Thick-cut halloumi blistered on cast iron with wild thyme honey and zaatar oil.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-veg">Vegetarian</span></div></div></div>
+      </div>
+    </div>
+    <div class="menu-panel" id="tab-mains">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&q=75&fit=crop" alt="Ouzi"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Lamb Ouzi</span><span class="menu-item-price">£48</span></div><p class="menu-item-desc">24-hour slow-roasted lamb shoulder, saffron rice, toasted almonds and caramelised onions.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=75&fit=crop" alt="Kabsa"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Kabsa Royale</span><span class="menu-item-price">£38</span></div><p class="menu-item-desc">Fragrant Saudi-style rice with cardamom, dried limes and tender free-range chicken.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=200&q=75&fit=crop" alt="Maqluba"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Maqluba</span><span class="menu-item-price">£36</span></div><p class="menu-item-desc">The "upside-down" — layered rice, roasted aubergine and spiced lamb, turned at the table.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-new">New</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&q=75&fit=crop" alt="Tagine"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Lamb Tagine</span><span class="menu-item-price">£42</span></div><p class="menu-item-desc">Moroccan-spiced lamb shoulder, dried apricots, prunes, preserved lemon and fluffy couscous.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+      </div>
+    </div>
+    <div class="menu-panel" id="tab-grills">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=200&q=75&fit=crop" alt="Mixed Grill"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Mixed Grill</span><span class="menu-item-price">£42</span></div><p class="menu-item-desc">Kafta, shish tawook, lamb kofta and seekh kebab with garlic sauce, rice and grilled bread.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75?w=200&q=75&fit=crop" alt="Shish Tawook"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Shish Tawook</span><span class="menu-item-price">£28</span></div><p class="menu-item-desc">Marinated chicken skewers with garlic paste, lemon and sumac, served over vermicelli rice.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=75&fit=crop" alt="Kafta"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Lamb Kafta</span><span class="menu-item-price">£26</span></div><p class="menu-item-desc">Hand-ground spiced lamb pressed onto charcoal skewers, served with fattoush and tahini.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span><span class="tag tag-spicy">Mildly Spiced</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=200&q=75&fit=crop" alt="Shawarma"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Shawarma Plate</span><span class="menu-item-price">£24</span></div><p class="menu-item-desc">Slow-rotisserie chicken or lamb, shaved and served with pickles, garlic sauce and khubz.</p><div class="menu-item-tags"><span class="tag tag-halal">Halal</span></div></div></div>
+      </div>
+    </div>
+    <div class="menu-panel" id="tab-desserts">
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&q=75&fit=crop" alt="Baklava"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Baklava Trio</span><span class="menu-item-price">£12</span></div><p class="menu-item-desc">Pistachio, walnut and cashew — each in hand-rolled filo, soaked in orange blossom syrup.</p><div class="menu-item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=200&q=75&fit=crop" alt="Umm Ali"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Umm Ali</span><span class="menu-item-price">£10</span></div><p class="menu-item-desc">Egypt's beloved bread pudding — flaky pastry, cream, raisins and pistachios baked golden.</p><div class="menu-item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=200&q=75&fit=crop" alt="Kunafa"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Kunafa Nabulsieh</span><span class="menu-item-price">£11</span></div><p class="menu-item-desc">Shredded wheat layered over melted white cheese, baked crisp and drenched in rose-water syrup.</p><div class="menu-item-tags"><span class="tag tag-veg">Vegetarian</span><span class="tag tag-new">New</span></div></div></div>
+        <div class="menu-item"><div class="menu-item-img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&q=75&fit=crop" alt="Muhallabia"></div><div class="menu-item-body"><div class="menu-item-top"><span class="menu-item-name">Muhallabia</span><span class="menu-item-price">£8</span></div><p class="menu-item-desc">Silken milk pudding scented with mastic and rose water, topped with crushed pistachios.</p><div class="menu-item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+      </div>
+    </div>
+    <p class="menu-note reveal">All dishes are prepared fresh daily. Menu is subject to seasonal change. Please inform us of any allergies. All meat is 100% Halal certified.</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<div class="experience">
+  <img src="https://static.wixstatic.com/media/244a8a_67f49a6bb53649e7bdfd735dd84cdeac~mv2.jpg/v1/fill/w_960,h_540,al_c,lg_1,q_85,enc_avif,quality_auto/244a8a_67f49a6bb53649e7bdfd735dd84cdeac~mv2.jpg" alt="Restaurant atmosphere">
+  <div class="experience-content">
+    <p class="exp-quote">"Food is not just fuel. It is <em>history, culture</em> and the language of love — served warm."</p>
+    <p class="exp-sub">— The Zaiqah Kitchen, Since 2000</p>
+  </div>
+</div>
+
+<!-- CHEFS -->
+<section class="chefs" id="chefs">
+  <div class="chefs-inner">
+    <div class="chefs-header reveal">
+      <span class="sec-label">The Craftspeople</span>
+      <h2 class="sec-title">Our <em>Chefs</em></h2>
+    </div>
+    <div class="chefs-grid">
+      <div class="chef-card reveal reveal-d1">
+        <div class="chef-img">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80&fit=crop&crop=faces" alt="Chef Nadia">
+          <div class="chef-hover-overlay"><div class="chef-socials"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+        </div>
+        <div class="chef-info"><div class="chef-name">Nadia Al-Rashid</div><div class="chef-role">Executive Chef &amp; Founder</div></div>
+      </div>
+      <div class="chef-card reveal reveal-d2">
+        <div class="chef-img">
+          <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=600&q=80&fit=crop&crop=faces" alt="Chef Omar">
+          <div class="chef-hover-overlay"><div class="chef-socials"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+        </div>
+        <div class="chef-info"><div class="chef-name">Omar Khalil</div><div class="chef-role">Head of Grills &amp; Mains</div></div>
+      </div>
+      <div class="chef-card reveal reveal-d3">
+        <div class="chef-img">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&fit=crop&crop=faces" alt="Chef Layla">
+          <div class="chef-hover-overlay"><div class="chef-socials"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+        </div>
+        <div class="chef-info"><div class="chef-name">Layla Hassan</div><div class="chef-role">Arabic Pastry Chef</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header reveal">
+      <span class="sec-label">Inside Zaiqah</span>
+      <h2 class="sec-title">Life at the <em>Table</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g-wide"><img src="https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=900&q=80&fit=crop" alt="Food spread"></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1529563021893-cc83c992d75d?w=500&q=80&fit=crop" alt="Grilled dish"></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=500&q=80&fit=crop" alt="Kabsa"></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=500&q=80&fit=crop" alt="Kitchen prep"></div>
+      <div class="g-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=80&fit=crop" alt="Sweets"></div>
+      <div class="g-item g-wide"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80&fit=crop" alt="Dining room"></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-header reveal">
+      <span class="sec-label">What Guests Say</span>
+      <h2 class="sec-title light">Voices from <em>Our Table</em></h2>
+    </div>
+    <div class="reviews-carousel" id="reviewsCarousel">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-slide"><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"Zaiqah took me straight back to my grandmother's kitchen in Beirut. The ouzi was otherworldly — deeply spiced, impossibly tender. A restaurant that actually understands what Arabic food is meant to feel like."</p><div class="review-author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&fit=crop&crop=faces" alt="Reviewer"><span class="review-name">Rami Al-Akhras</span><span class="review-title">Food Writer · The Sunday Standard</span></div></div></div>
+        <div class="review-slide"><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"The grand meze alone is worth the trip to Belgravia. Every element had been thought about. I have dined at fine Arabic restaurants across four countries — Zaiqah is at the very top."</p><div class="review-author"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&fit=crop&crop=faces" alt="Reviewer"><span class="review-name">Sophie Whitmore</span><span class="review-title">Hospitality Consultant · Dubai &amp; London</span></div></div></div>
+        <div class="review-slide"><div class="review-card"><div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text">"As a chef myself, I rarely leave a restaurant truly impressed. Zaiqah managed it effortlessly. The kunafa was the finest I have had outside of Nablus, and the service made me feel like family."</p><div class="review-author"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80&fit=crop&crop=faces" alt="Reviewer"><span class="review-name">James Reeves</span><span class="review-title">Executive Chef · The Ivory Club</span></div></div></div>
+      </div>
+    </div>
+    <div class="reviews-nav" id="reviewsNav">
+      <button class="rev-dot active" data-rev="0"></button>
+      <button class="rev-dot" data-rev="1"></button>
+      <button class="rev-dot" data-rev="2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation" id="reservation">
+  <div class="reservation-inner">
+    <div class="res-info reveal-left">
+      <div class="live-badge" id="liveBadge">
+        <span class="live-dot" id="liveDot"></span>
+        <span id="liveStatus">Checking hours…</span>
+      </div>
+      <span class="sec-label">Book Your Experience</span>
+      <h2 class="sec-title">Reserve <em>Your Table</em></h2>
+      <p class="sec-body">Call us or complete the form and we will confirm your reservation within the hour. We would love to welcome you.</p>
+      <div class="res-contact-list" style="margin-top:36px">
+        <div class="res-contact-item"><i class="fa-solid fa-phone"></i><div><span class="rc-label">Reservations</span><span class="rc-val">+44 207 111 2233</span></div></div>
+        <div class="res-contact-item"><i class="fa-solid fa-envelope"></i><div><span class="rc-label">Email</span><span class="rc-val">dine@zaiqah.co.uk</span></div></div>
+        <div class="res-contact-item"><i class="fa-solid fa-location-dot"></i><div><span class="rc-label">Location</span><span class="rc-val">14 Ivory Court, Belgravia, London SW1X 8QH</span></div></div>
+        <div class="res-contact-item"><i class="fa-solid fa-clock"></i><div><span class="rc-label">Hours</span><span class="rc-val">Mon – Sun · 12:00 pm – 11:00 pm</span></div></div>
+      </div>
+    </div>
+    <div class="res-form reveal-right">
+      <h3>Make a Reservation</h3>
+      <form id="resForm">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input class="form-control" type="text" name="fname" placeholder="Nadia" required></div>
+          <div class="form-group"><label>Last Name</label><input class="form-control" type="text" name="lname" placeholder="Al-Rashid" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input class="form-control" type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-group"><label>Phone</label><input class="form-control" type="tel" name="phone" placeholder="+44..."></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Date</label><input class="form-control" type="date" name="date" required></div>
+          <div class="form-group"><label>Time</label><select class="form-control" name="time" required><option value="" disabled selected>Select time</option><option>12:00 pm</option><option>12:30 pm</option><option>1:00 pm</option><option>1:30 pm</option><option>2:00 pm</option><option>7:00 pm</option><option>7:30 pm</option><option>8:00 pm</option><option>8:30 pm</option><option>9:00 pm</option><option>9:30 pm</option><option>10:00 pm (Last Seating)</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Guests</label><select class="form-control" name="guests" required><option value="" disabled selected>How many?</option><option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5 Guests</option><option>6 Guests</option><option>7+ (Private Room)</option></select></div>
+          <div class="form-group"><label>Occasion</label><select class="form-control" name="occasion"><option>No Special Occasion</option><option>Birthday</option><option>Anniversary</option><option>Engagement</option><option>Business Dinner</option><option>Iftar</option><option>Private Event</option></select></div>
+        </div>
+        <div class="form-group"><label>Special Requests / Allergies</label><textarea class="form-control" name="notes" placeholder="Dietary requirements, seating preferences…"></textarea></div>
+        <button type="submit" class="btn btn-gold form-submit">Confirm Reservation</button>
+        <div class="form-success" id="formSuccess">Shukran! We will confirm your table shortly. <br>يسعدنا استقبالكم 🌙</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="events-inner">
+    <div class="events-header reveal">
+      <span class="sec-label">What's On</span>
+      <h2 class="sec-title">Upcoming <em>Events</em></h2>
+    </div>
+    <div class="events-grid">
+      <div class="event-card reveal reveal-d1"><div class="event-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=700&q=80&fit=crop" alt="Iftar"><div class="event-date"><span class="eday">07</span><span class="emon">Jun</span></div></div><div class="event-body"><div class="event-cat">Weekly · Every Friday</div><div class="event-title">Grand Friday Iftar Table</div><p class="event-desc">Our weekly communal iftar — shared plates, warm bread, Ramadan lanterns and open doors from sunset. All are welcome.</p></div></div>
+      <div class="event-card reveal reveal-d2"><div class="event-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80&fit=crop" alt="Chef Table"><div class="event-date"><span class="eday">21</span><span class="emon">Jun</span></div></div><div class="event-body"><div class="event-cat">Exclusive · 8 Seats Only</div><div class="event-title">Chef's Table Experience</div><p class="event-desc">Spend an intimate evening inside our kitchen — watch, taste and converse with Chef Nadia as she cooks a 7-course menu just for you.</p></div></div>
+      <div class="event-card reveal reveal-d3"><div class="event-img"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80&fit=crop" alt="Spice Workshop"><div class="event-date"><span class="eday">05</span><span class="emon">Jul</span></div></div><div class="event-body"><div class="event-cat">Workshop · Morning</div><div class="event-title">The Art of Arabic Spice</div><p class="event-desc">A hands-on morning blending baharat, za'atar and ras el hanout with our spice master — followed by lunch in the dining room.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Zaiqah</div>
+      <div class="footer-logo-arabic">زيقة — المذاق الأصيل</div>
+      <p class="footer-tagline">Arabic fine dining at the heart of Belgravia, London. Serving the soul of a culture since 2000.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tripadvisor"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#dishes">Signature Dishes</a></li>
+        <li><a href="#menu">Full Menu</a></li>
+        <li><a href="#chefs">Our Chefs</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#reservation">Reservations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <ul>
+        <li><a href="#">14 Ivory Court, Belgravia</a></li>
+        <li><a href="#">London SW1X 8QH</a></li>
+        <li><a href="tel:+442071112233">+44 207 111 2233</a></li>
+        <li><a href="mailto:dine@zaiqah.co.uk">dine@zaiqah.co.uk</a></li>
+        <li><a href="#">Open Daily · 12 pm – 11 pm</a></li>
+        <li><a href="#">Get Directions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p style="font-size:1.35rem;color:var(--text-secondary);line-height:1.7;margin-bottom:4px">Subscribe for seasonal menus, events and exclusive offers.</p>
+      <div class="footer-newsletter">
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email" id="newsletterEmail">
+          <button onclick="subscribeNewsletter()"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <ul style="margin-top:20px">
+        <li><a href="#">Private Dining Enquiries</a></li>
+        <li><a href="#">Gift Vouchers</a></li>
+        <li><a href="#">Allergen Information</a></li>
+        <li><a href="#">Halal Certification</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Zaiqah Restaurant Ltd. All rights reserved. · 100% Halal Certified</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Settings</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+</body>
+</html>
